@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Services - Haii.run Fitness</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d125",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                        "soft-cream": "#F4F1E8"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                transition: left 0.3s ease;
+                z-index: 50;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 40;
+            }
+
+            .mobile-overlay.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#1c190d] dark:text-white font-display">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 bg-primary p-2 rounded-lg">
+        <span class="material-symbols-outlined text-[#1c190d]">menu</span>
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar"
+            class="sidebar w-64 border-r border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark md:sticky md:top-0 h-screen flex flex-col justify-between p-6">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary rounded-full size-10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#1c190d]">bolt</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-[#1c190d] dark:text-white text-lg font-bold leading-none">Haii.run</h1>
+                        <p class="text-[#9c8e49] text-xs font-medium">Fitness Dashboard</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        href="index.html">
+                        <span class="material-symbols-outlined text-xl">home</span>
+                        <span class="text-sm font-medium">Home</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-soft-cream dark:bg-gray-800 transition-colors"
+                        href="services.html">
+                        <span class="material-symbols-outlined text-xl text-primary font-fill">fitness_center</span>
+                        <span class="text-sm font-bold">Services</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        href="blog.html">
+                        <span class="material-symbols-outlined text-xl">article</span>
+                        <span class="text-sm font-medium">Blog</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        href="about.html">
+                        <span class="material-symbols-outlined text-xl">info</span>
+                        <span class="text-sm font-medium">About Us</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        href="contact.html">
+                        <span class="material-symbols-outlined text-xl">contact_mail</span>
+                        <span class="text-sm font-medium">Contact Us</span>
+                    </a>
+                </nav>
+            </div>
+            <button
+                onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi%20layanan!', '_blank')"
+                class="w-full bg-primary text-[#1c190d] py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                Chat WhatsApp
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            <!-- Top Navigation Bar -->
+            <header
+                class="flex items-center justify-between px-4 md:px-8 py-4 bg-background-light dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+                <div class="relative w-full md:w-96 ml-12 md:ml-0">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#9c8e49]">search</span>
+                    <input
+                        class="w-full bg-[#f4f1e7] dark:bg-gray-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary"
+                        placeholder="Search services..." type="text" />
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 bg-primary rounded-lg font-bold text-sm text-[#1c190d] hidden md:block">
+                        Upgrade
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Page Content -->
+            <div class="overflow-y-auto p-4 md:p-8 bg-soft-cream dark:bg-[#1a180d] flex-1">
+                <div class="max-w-6xl mx-auto space-y-8">
+                    <!-- Page Header -->
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-black mb-2">Our Services</h1>
+                        <p class="text-[#9c8e49]">Explore our professional fitness and wellness programs tailored for
+                            your specific goals.</p>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="filterServices('all')"
+                            class="filter-btn active px-4 py-2 rounded-lg bg-primary text-[#1c190d] font-bold text-sm">
+                            All Programs
+                        </button>
+                        <button onclick="filterServices('strength')"
+                            class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 font-medium text-sm hover:bg-gray-50">
+                            Strength
+                        </button>
+                        <button onclick="filterServices('mindfulness')"
+                            class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 font-medium text-sm hover:bg-gray-50">
+                            Mindfulness
+                        </button>
+                        <button onclick="filterServices('nutrition')"
+                            class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 font-medium text-sm hover:bg-gray-50">
+                            Nutrition
+                        </button>
+                    </div>
+
+                    <!-- Services Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Service 1 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="strength">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/personal-training.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <span
+                                    class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold">⭐
+                                    TOP RATED</span>
+                                <h3 class="text-xl font-bold">🏋️ Personal Training</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">1-on-1 coaching with expert
+                                    trainers focusing on your specific strength, mobility, and aesthetic goals.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ Customized workout plans</li>
+                                    <li>✓ One-on-one coaching sessions</li>
+                                    <li>✓ Progress tracking & analytics</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Personal%20Training', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="mindfulness">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/yoga-sessions.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold">🧘 Yoga Sessions</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">Find your inner balance with
+                                    mindfulness-driven sessions. Improve flexibility and mental clarity.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ Multiple yoga styles available</li>
+                                    <li>✓ Beginner to advanced levels</li>
+                                    <li>✓ Meditation & breathing techniques</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Yoga%20Sessions', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="nutrition">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/nutrition-plans.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold">🍽️ Nutrition Plans</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">Fuel your performance with custom
+                                    meal prep guidance designed by certified nutritionists.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ Personalized meal plans</li>
+                                    <li>✓ Macro & calorie tracking</li>
+                                    <li>✓ Recipe recommendations</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Nutrition%20Plans', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="strength">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/group-classes.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold">👥 Group Classes</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">High-intensity interval training
+                                    and community-driven group workouts.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ HIIT & circuit training</li>
+                                    <li>✓ Motivating group environment</li>
+                                    <li>✓ All fitness levels welcome</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Group%20Classes', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="mindfulness">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/recovery-therapy.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold">💆 Recovery Therapy</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">Advanced recovery techniques and
+                                    sleep optimization strategies.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ Sports massage therapy</li>
+                                    <li>✓ Recovery optimization</li>
+                                    <li>✓ Injury prevention strategies</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Recovery%20Therapy', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Service 6 -->
+                        <div class="service-card bg-white dark:bg-background-dark rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-lg transition-shadow"
+                            data-category="strength">
+                            <div class="h-48 bg-cover bg-center"
+                                style="background-image: url('assets/images/endurance-coaching.png');"></div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold">🏃 Endurance Coaching</h3>
+                                <p class="text-[#9c8e49] dark:text-gray-400 text-sm">Specific programs for marathon
+                                    runners, triathletes, and cyclists.</p>
+                                <ul class="space-y-1 text-sm text-[#9c8e49]">
+                                    <li>✓ Marathon & triathlon prep</li>
+                                    <li>✓ Performance analytics</li>
+                                    <li>✓ Endurance building programs</li>
+                                </ul>
+                                <button
+                                    onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Endurance%20Coaching', '_blank')"
+                                    class="w-full bg-primary text-[#1c190d] py-2 rounded-lg font-bold text-sm hover:opacity-90">
+                                    Consult via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help Section -->
+                    <div
+                        class="bg-white dark:bg-background-dark p-8 rounded-2xl border border-gray-100 dark:border-gray-800 text-center">
+                        <div class="bg-primary/20 p-4 rounded-full w-fit mx-auto mb-4">
+                            <span class="material-symbols-outlined text-primary text-4xl">support_agent</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Need help choosing?</h3>
+                        <p class="text-[#9c8e49] mb-6">Our wellness consultants are online to assist you in finding the
+                            perfect program.</p>
+                        <button
+                            onclick="window.open('https://wa.me/6281234567890?text=Halo,%20saya%20butuh%20bantuan%20memilih%20program', '_blank')"
+                            class="bg-primary text-[#1c190d] px-8 py-3 rounded-lg font-bold hover:opacity-90">
+                            Direct Support via WhatsApp
+                        </button>
+                    </div>
+
+                    <!-- Footer -->
+                    <footer class="pt-8 pb-12 text-center text-[#9c8e49]">
+                        <p class="text-sm">© 2024 Haii.run Fitness. All rights reserved.</p>
+                        <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-4">
+                            <a class="hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+                            <a class="hover:text-primary transition-colors text-sm" href="#">Terms of Service</a>
+                            <a class="hover:text-primary transition-colors text-sm" href="contact.html">Contact
+                                Support</a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+        });
+
+        mobileOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+        });
+
+        // Filter services
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.service-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-[#1c190d]');
+                btn.classList.add('bg-white', 'dark:bg-background-dark', 'border', 'border-gray-200');
+            });
+            event.target.classList.add('bg-primary', 'text-[#1c190d]');
+            event.target.classList.remove('bg-white', 'dark:bg-background-dark', 'border');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20konsultasi!" 
+       target="_blank"
+       class="floating-whatsapp"
+       aria-label="Chat WhatsApp">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" 
+            class="scroll-to-top"
+            aria-label="Scroll to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <style>
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f4d125 0%, #e0bd1f 100%);
+            color: #1c190d;
+            border: none;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(244, 209, 37, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(244, 209, 37, 0.6);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .floating-whatsapp {
+                width: 56px;
+                height: 56px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .floating-whatsapp svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .scroll-to-top {
+                width: 46px;
+                height: 46px;
+                bottom: 80px;
+                right: 16px;
+            }
+
+            .scroll-to-top .material-symbols-outlined {
+                font-size: 20px;
+            }
+        }
+
+        /* Prevent overlap with sidebar on mobile */
+        @media (max-width: 768px) {
+            .sidebar.active ~ .floating-whatsapp,
+            .sidebar.active ~ .scroll-to-top {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+    </style>
+
+    <script>
+        // Scroll to Top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
